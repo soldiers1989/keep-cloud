@@ -41,7 +41,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>cn.qidd.keep.eureka.ZuulApplication</mainClass>
+                    <mainClass>cn.qidd.keep.zuul.ZuulApplication</mainClass>
                 </configuration>
                 <executions>
                     <execution>

@@ -1,10 +1,14 @@
 server:
   port: 8761
-
 eureka:
   client:
     register-with-eureka: false
     fetch-registry: false
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    health-check-url: ${management.server.servlet.context-path}/health
+    status-page-url-path: ${management.server.servlet.context-path}/info
 
 logging:
   level:
@@ -12,4 +16,12 @@ logging:
       netflix:
         eureka: OFF
         discovery: OFF
+
+management:
+  endpoint:
+    auditevents:
+      enabled: true
+  server:
+    servlet:
+      context-path: management
 

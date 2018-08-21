@@ -1,4 +1,4 @@
-package cn.qidd.keep.eureka;
+package cn.qidd.keep.zuul;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
