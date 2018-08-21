@@ -4,11 +4,15 @@ spring:
   application:
     name: service-business
 eureka:
+  instance:
+    instance-id: service-business
   client:
     enabled: true
     fetch-registry: false
     service-url:
       default-zone: http://localhost:8761/eureka/
+
+
 
 
 
