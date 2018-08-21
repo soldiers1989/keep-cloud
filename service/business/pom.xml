@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>business</artifactId>
+    <artifactId>keep-cloud-service-business</artifactId>
 
     <dependencies>
         <dependency>
