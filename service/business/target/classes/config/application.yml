@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: service-business
+  profiles:
+    active: dev
+
+
+
+
+
