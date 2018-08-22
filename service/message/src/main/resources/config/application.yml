@@ -1,13 +1,7 @@
-server:
-  port: 50002
 spring:
   application:
     name: service-message
-eureka:
-  instance:
-    instance-id: service-message
-  client:
-    enabled: true
-    default-zone: http://localhost:8761/eureka/
+  profiles:
+    active: @spring.profiles.active@
 
 

@@ -1,9 +1,8 @@
-server:
-  port:
-    50000
 spring:
   application:
     name: zuul
+  profiles:
+    active: dev
 zuul:
   routes:
     service-business:
@@ -13,8 +12,4 @@ zuul:
       instance-id: service-message
       path: /service-message/*
 
-eureka:
-  client:
-    service-url:
-      default-zone: http://localhost:8761/eureka/
 

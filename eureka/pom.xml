@@ -11,8 +11,6 @@
 
     <artifactId>keep-cloud-eureka</artifactId>
 
-    <name>eureka</name>
-
     <packaging>jar</packaging>
 
     <dependencies>
