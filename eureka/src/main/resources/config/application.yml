@@ -1,7 +1,14 @@
+spring:
+  profiles:
+    active: @spring.profiles.active@
+  application:
+    name: eureka
+
 logging:
   level:
     com:
       netflix:
         eureka: OFF
         discovery: OFF
+
 

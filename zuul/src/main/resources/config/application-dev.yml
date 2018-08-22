@@ -12,3 +12,7 @@ eureka:
     service-url:
       default-zone: http://localhost:8761/eureka/
 
+logging:
+  config: logback-spring-test.xml
+  file: /keep-cloud/log/zuul.log
+    max-size: 50M
