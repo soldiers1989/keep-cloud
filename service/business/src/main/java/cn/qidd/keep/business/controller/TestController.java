@@ -14,11 +14,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/test/")
 public class TestController {
 
-    private Logger logger = LoggerFactory.getLogger(TestController.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(TestController.class);
 
     @GetMapping("sayHello")
     @ApiOperation(value = "sayHello")
     public ResponseEntity sayHello() {
+        LOGGER.debug("debug say hello");
+        LOGGER.info("info say hello");
+        LOGGER.warn("warn say hello");
+        LOGGER.error("error say hello");
+        LOGGER.trace("trace say hello");
         return ResponseEntity.ok().body("hello");
     }
 }
