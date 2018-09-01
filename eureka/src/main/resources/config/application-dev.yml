@@ -1,20 +1,22 @@
 server:
   port: 8761
+spring:
+  profiles:
+    active: dev
+
 eureka:
   client:
-    register-with-eureka: false
+    register-with-eureka: true
     fetch-registry: false
     service-url:
-      defaultZone: http://localhost:8761/eureka/
-  instance:
-    health-check-url: ${management.server.servlet.context-path}/health
-    status-page-url-path: ${management.server.servlet.context-path}/info
+      defaultZone: ${EUREKA_SERVICE_URL:http://localhost:8761}/eureka/
 
 management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
   endpoint:
-    auditevents:
-      enabled: true
-  server:
-    servlet:
-      context-path: management
+    health:
+      show-details: ALWAYS
 
