@@ -1,23 +1,23 @@
 server:
-  port:
-    50000
+  port: 8762
+
 spring:
   profiles:
     active: dev
   security:
     user:
-      password: zuul
-      name: zuul
+      name: admin
+      password: admin
 
 eureka:
+  client:
+    service-url:
+      default-zone: ${EUREKA_SERVICE_URL:http://localhost:8761}/eureka/
   instance:
     metadata-map:
       user:
         name: ${spring.security.user.name}
         password: ${spring.security.user.password}
-  client:
-    service-url:
-      default-zone: ${EUREKA_SERVICE_URL:http://localhost:8761}/eureka/
 
 management:
   endpoints:
@@ -27,3 +27,4 @@ management:
   endpoint:
     health:
       show-details: ALWAYS
+

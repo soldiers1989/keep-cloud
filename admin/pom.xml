@@ -21,7 +21,8 @@
         </dependency>
         <dependency>
             <groupId>de.codecentric</groupId>
-            <artifactId>spring-boot-admin-starter-client</artifactId>
+            <artifactId>spring-boot-admin-server-ui</artifactId>
+            <version>${spring-boot-admin-ui.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>

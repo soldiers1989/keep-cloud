@@ -26,6 +26,7 @@
     <properties>
         <lombok.version>1.18.2</lombok.version>
 
+        <spring-boot-admin-ui.version>2.0.1</spring-boot-admin-ui.version>
         <spring-boot-admin.version>2.0.1</spring-boot-admin.version>
 
         <springfox-swagger2.version>2.9.2</springfox-swagger2.version>
@@ -54,24 +55,6 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-
-    <!-- maven编译插件，用于创建可执行jar包 -->
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>${spring-boot.version}</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>repackage</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
 
     <profiles>
         <profile>

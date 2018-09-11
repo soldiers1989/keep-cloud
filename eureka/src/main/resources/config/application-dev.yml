@@ -3,8 +3,17 @@ server:
 spring:
   profiles:
     active: dev
+  security:
+    user:
+      name: eureka
+      password: eureka
 
 eureka:
+  instance:
+    metadata-map:
+      user:
+        name: ${spring.security.user.name}
+        password: ${spring.security.user.password}
   client:
     register-with-eureka: true
     fetch-registry: false

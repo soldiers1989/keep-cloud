@@ -3,6 +3,10 @@ server:
 spring:
   profiles:
     active: prod
+  security:
+    user:
+      name: manage
+      password: manage
   datasource:
       url: jdbc:mysql://39.107.125.86:3306/keep-cloud?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&allowMultiQueries=true&useSSL=false&allowPublicKeyRetrieval=false
       driver-class-name: com.mysql.jdbc.Driver
@@ -20,6 +24,11 @@ spring:
       cluster-nodes: 39.107.125.86:9300
 
 eureka:
+  instance:
+    metadata-map:
+      user:
+        name: ${spring.security.user.name}
+        password: ${spring.security.user.password}
   client:
     registryFetchIntervalSeconds: 30
     service-url:

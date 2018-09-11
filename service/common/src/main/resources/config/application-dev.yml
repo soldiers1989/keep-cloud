@@ -3,8 +3,17 @@ server:
 spring:
   profiles:
     active: dev
+  security:
+    user:
+      name: common
+      password: common
 
 eureka:
+  instance:
+    metadata-map:
+      user:
+        name: ${spring.security.user.name}
+        password: ${spring.security.user.password}
   client:
     registryFetchIntervalSeconds: 30
     service-url:
