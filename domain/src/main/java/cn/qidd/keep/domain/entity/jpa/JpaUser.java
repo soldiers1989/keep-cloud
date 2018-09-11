@@ -9,9 +9,9 @@ import java.io.Serializable;
 import java.util.Date;
 
 @Data
-@Table
+@Table(name = "user")
 @Entity
-public class User implements Serializable {
+public class JpaUser implements Serializable {
     @Id
     @GeneratedValue(generator = "myIdStrategy")
     @GenericGenerator(name = "myIdStrategy", strategy = "uuid")

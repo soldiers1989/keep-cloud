@@ -10,7 +10,7 @@ import java.util.Date;
 
 @Data
 @Document
-public class User implements Serializable {
+public class MongoUser implements Serializable {
     @Id
     private String id;
     private String userName;

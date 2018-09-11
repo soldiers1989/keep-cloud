@@ -10,7 +10,7 @@ import java.util.Date;
 
 @Data
 @Document(indexName = "user", type = "user")
-public class ELUser implements Serializable {
+public class ElasticUser implements Serializable {
     @Id
     private String id;
     private String userName;

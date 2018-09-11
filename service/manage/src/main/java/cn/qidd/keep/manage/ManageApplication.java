@@ -6,19 +6,12 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.ConfigurableEnvironment;
-import org.springframework.data.elasticsearch.repository.config.EnableElasticsearchRepositories;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
-import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
-import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 
-@EnableElasticsearchRepositories(basePackages = "cn.qidd.keep.manage.repository.elastic")
-@EnableMongoRepositories(basePackages = "cn.qidd.keep.manage.repository.mongo")
 @EnableJpaRepositories(basePackages = "cn.qidd.keep.manage.repository.jpa")
 @EntityScan("cn.qidd.keep.domain.entity")
 @SpringBootApplication
