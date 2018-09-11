@@ -1,0 +1,35 @@
+server:
+  port: 50001
+spring:
+  profiles:
+    active: prod
+  datasource:
+      url: jdbc:mysql://39.107.125.86:3306/keep-cloud?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&allowMultiQueries=true&useSSL=false&allowPublicKeyRetrieval=false
+      driver-class-name: com.mysql.jdbc.Driver
+      username: mysql
+      password: Mysql123456!
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+    database-platform: org.hibernate.dialect.MySQL5Dialect
+  data:
+    mongodb:
+      uri: mongodb://39.107.125.86:27017/keep-cloud
+    elasticsearch:
+      cluster-nodes: 39.107.125.86:9300
+
+eureka:
+  client:
+    registryFetchIntervalSeconds: 30
+    service-url:
+      default-zone: ${EUREKA_SERVICE_URL:http://localhost:8761}/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS

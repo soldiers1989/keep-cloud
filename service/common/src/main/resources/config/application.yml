@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: service-common
+  profiles:
+    active: @spring.profiles.active@
+
+

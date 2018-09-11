@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: service-manage
+  profiles:
+    active: @spring.profiles.active@
+
+
+
+
+

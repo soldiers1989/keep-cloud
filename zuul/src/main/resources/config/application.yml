@@ -5,11 +5,11 @@ spring:
     active: @spring.profiles.active@
 zuul:
   routes:
-    service-business:
-      instance-id: service-business
-      path: /service-business/*
-    service-message:
-      instance-id: service-message
-      path: /service-message/*
+    service-manage:
+      instance-id: service-manage
+      path: /service-manage/*
+    service-common:
+      instance-id: service-common
+      path: /service-common/*
 
 

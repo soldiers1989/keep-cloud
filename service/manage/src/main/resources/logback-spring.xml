@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <!--引入默认的一些设置-->
+    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+    <!--引入默认的console-->
+    <include resource="org/springframework/boot/logging/logback/console-appender.xml" />
+    <!--web信息-->
+    <logger name="org.springframework.web" level="info"/>
+
+    <!--contextName节点设置上下文名称（可有可无），设置了则日志通过这个名称打印日志-->
+    <!--<contextName>logback-demo</contextName>-->
+
+    <!-- File日志文件格式 -->
+    <property name="FILE_LOG_PATTERN" value="%date %level [%thread] %logger{10} [%file : %line] %msg%n" />
+
+    <!--日志文件根目录-->
+    <property name="LogFileRoot" value="/home/keep-cloud/logs"/>
+    <property name="LogFileName" value="zuul.log"/>
+    <property name="TaskLogFileName" value="task-manage.log"/>
+
+    <!--输出到文件-->
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LogFileRoot}/${LogFileName}</file>
+        <!--如果只是想要 Info 级别的日志，只是过滤 info 还是会输出 Error 日志，因为 Error 的级别高，
+        所以我们使用下面的策略，可以避免输出 Error 的日志-->
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <!--过滤 DEBUG-->
+            <level>DEBUG</level>
+        </filter>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!--文件路径,定义了日志的切分方式——把每一天的日志归档到一个文件中,以防止日志填满整个磁盘空间-->
+            <FileNamePattern>${LogFileRoot}/${LogFileName}.%d{yyyy-MM-dd}.%i.log</FileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <!-- 除按日志记录之外，还配置了日志文件不能超过10M(默认)，若超过10M，日志文件会以索引0开始， -->
+                <maxFileSize>10MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+        <!--日志输出编码格式化-->
+        <encoder>
+            <charset>UTF-8</charset>
+            <pattern>${FILE_LOG_PATTERN}</pattern>
+        </encoder>
+    </appender>
+
+    <!--输出到文件制定文件 可以配合下面的logger设置指定的某个类指定的日志信息到指定的日志文件-->
+    <appender name="TASK_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LogFileRoot}/${TaskLogFileName}</file>
+        <!--如果只是想要 Info 级别的日志，只是过滤 info 还是会输出 Error 日志，因为 Error 的级别高，
+        所以我们使用下面的策略，可以避免输出 Error 的日志-->
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <!--过滤 DEBUG-->
+            <!--<level>ERROR</level>-->
+        </filter>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!--文件路径,定义了日志的切分方式——把每一天的日志归档到一个文件中,以防止日志填满整个磁盘空间-->
+            <FileNamePattern>${LogFileRoot}/${TaskLogFileName}.%d{yyyy-MM-dd}.%i.log</FileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <!-- 除按日志记录之外，还配置了日志文件不能超过10M(默认)，若超过10M，日志文件会以索引0开始， -->
+                <maxFileSize>10MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+        <!--日志输出编码格式化-->
+        <encoder>
+            <charset>UTF-8</charset>
+            <pattern>${FILE_LOG_PATTERN}</pattern>
+        </encoder>
+    </appender>
+
+    <!--dev,test,demo环境-->
+    <springProfile name="dev,test,demo">
+        <!--指定特定的日志打印到特定的文件中-->
+        <!--<logger name="cn.qidd.keep.manageontroller.TestController" additivity="true" level="trace">-->
+        <!--<appender-ref ref="TASK_FILE"/>-->
+        <!--</logger>-->
+        <logger name="cn.qidd.keep" level="DEBUG"/>
+        <root level="INFO">
+            <appender-ref ref="CONSOLE"/>
+        </root>
+    </springProfile>
+
+    <!--prod环境-->
+    <springProfile name="prod">
+        <!--<logger name="cn.qidd.keep.manageontroller.TestController" additivity="true" level="INFO">-->
+        <!--<appender-ref ref="TASK_FILE"/>-->
+        <!--</logger>-->
+        <root level="INFO">
+            <appender-ref ref="FILE"/>
+        </root>
+    </springProfile>
+</configuration>

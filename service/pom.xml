@@ -13,9 +13,8 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>message</module>
-        <module>business</module>
+        <module>common</module>
+        <module>manage</module>
     </modules>
-
 
 </project>

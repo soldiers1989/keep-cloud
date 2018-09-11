@@ -12,8 +12,8 @@
         <module>eureka</module>
         <module>zuul</module>
         <module>service</module>
-        <module>common</module>
         <module>admin</module>
+        <module>domain</module>
     </modules>
 
     <parent>
@@ -24,6 +24,8 @@
     </parent>
 
     <properties>
+        <lombok.version>1.18.2</lombok.version>
+
         <spring-boot-admin.version>2.0.1</spring-boot-admin.version>
 
         <springfox-swagger2.version>2.9.2</springfox-swagger2.version>
