@@ -24,6 +24,7 @@
     </parent>
 
     <properties>
+
         <lombok.version>1.18.2</lombok.version>
 
         <spring-boot-admin-ui.version>2.0.1</spring-boot-admin-ui.version>
