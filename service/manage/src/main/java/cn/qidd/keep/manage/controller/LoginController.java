@@ -24,7 +24,6 @@ import java.util.Objects;
 @ApiModel(description = "登陆")
 public class LoginController {
 
-
     @Autowired
     private JpaUserRepository jpaUserRepository;
 

@@ -25,6 +25,10 @@
 
     <properties>
 
+        <fastjson.version>1.2.49</fastjson.version>
+
+        <commons-pool2.version>2.6.0</commons-pool2.version>
+
         <lombok.version>1.18.2</lombok.version>
 
         <spring-boot-admin-ui.version>2.0.1</spring-boot-admin-ui.version>

@@ -1,11 +1,11 @@
-package cn.qidd.keep.manage.controller;
+package cn.qidd.keep.manage.controller.system;
 
 import cn.qidd.keep.domain.core.Constants;
 import cn.qidd.keep.domain.core.Result;
 import cn.qidd.keep.domain.entity.jpa.JpaUser;
 import cn.qidd.keep.domain.util.MD5;
 import cn.qidd.keep.manage.model.LoginModel;
-import cn.qidd.keep.manage.model.UserSearchParams;
+import cn.qidd.keep.manage.model.system.UserSearchParams;
 import cn.qidd.keep.manage.repository.jpa.JpaUserRepository;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;

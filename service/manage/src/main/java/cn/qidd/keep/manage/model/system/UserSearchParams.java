@@ -1,4 +1,4 @@
-package cn.qidd.keep.manage.model;
+package cn.qidd.keep.manage.model.system;
 
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
